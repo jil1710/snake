@@ -1,0 +1,3 @@
+start working on ui for login
+Working on validation!
+Connect to DB
