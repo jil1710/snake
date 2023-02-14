@@ -1,0 +1,102 @@
+Git Tutorial : ---
+remo
+1) git --version (to check git latest version)
+2) git config --list --show-origin ( to get all config files)
+3) git config user.email
+4) git config --local user.email xyz@abc.pqm
+5) git config --local user.name xyz
+6) git config --unset user.name or user.email
+7) git config --local --remove-section user (to remove entire section)
+
+----------------------------------------------
+ 
+8) git diff ( working -> staging area)
+9) git diff --staged (staging -> commit/repository area)
+10) git diff head ( working -> repository area)
+11) git diff --cached (to get the changes)
+
+-------------------------------------------------------
+
+Every thing store in git is in the form of SHA1 :--
+
+11) git log or git log --oneline( to get the all log you commited)
+12) git cat-file hashcode -p ( to decode the linking connection to get the final output)
+
+------------------------------------------------------------------------------------------
+
+Rename or Restore Files from staging area to working area
+
+13) git mv abc.txt xyz.html
+14) git restore filename or git rm --cached filename or git restore --staged filename
+
+---------------------------------------------------------------------------------------------
+
+All About Branching
+
+15) git branch 
+16) git checkout master or git switch master or git switch -c master( to move from current to master)
+17) git cheackout -b branchname or git branch branchname (  to create a branch )
+18) git branch -m newbranchname(rename)
+19) git branch -d/D branchname(delete)
+20) git merge branchname(highly alert :- target branchname !!!)
+21) git merge --abort 
+
+-------------------------------------------------------------------------------------------------
+
+* Using SSH protocol you can connect and authenticate to remote servers ans services so it does not required to login all the time to retrive or post data on github
+
+22) firstly generate ssh key using :  - ssh-keygen -t ed25519 -C "abc@xyz.com"
+23) In addition add ssh-agent running in backgroung :- eval  `ssh-agent -s`
+24) Further add ssh private key to ssh agent :- ssh-add ~/.ssh/nameoffile
+25) Now setting SSH key on your github account  
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* To check our local repository is link with another remote or not ? :- git remote or git remote -v
+
+To create linkage :- git remote add anyname <url>
+Rename remote name :- git remote rename oldname newname
+Remove remote name :- git remote remove <name>
+delete old remote branch :- git push origin --delete master
+
+-------------------------------------------------------------------------------------------------------------------
+
+* Get lastest change 
+
+git fetch origin or git fetch (to get the latest change in local git but not in working environment)
+git pull origin master (get a latest change in direct working area)
+
+* github gist is a way to share code snippet with other
+
+----------------------------------------------------------------------------------------------------------------------
+
+* Rebase (alternative to merge and not to use when branch is public)
+
+git rebase master
+git rebase -i master (mearge or combining all commit to new commit)
+
+* Modify or change latest commit
+
+git commit --amend ( to append the commit to its initial commits)
+
+------------------------------------------------------------------------------------------------------------
+
+* Cherry-pick (appied particular commit to one branch to another branch but there is a drawback that it copy the commit to another branch)
+
+git cherry-pick hashvalue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
